@@ -1,0 +1,10 @@
+@import '~antd/dist/antd.css';
+
+.ant-btn {
+  color: #fff;
+
+  &:hover, &:focus {
+    color: #000;
+    border-color: #000;
+  }
+}

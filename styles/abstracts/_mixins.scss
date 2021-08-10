@@ -1,0 +1,20 @@
+@mixin transitionEffect($param) {
+  transition: $param all;
+  -webkit-transition: $param all;
+  -moz-transition: $param all;
+  -o-transition: $param all;
+}
+
+@mixin borderRadius($param) {
+  border-radius: $param;
+  -webkit-border-radius: $param;
+  -moz-border-radius: $param;
+}
+
+@mixin cardShadow() {
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px, rgba(0, 0, 0, 0.24) 0 1px 2px;
+}
+
+@mixin cardShadowDark() {
+  box-shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}

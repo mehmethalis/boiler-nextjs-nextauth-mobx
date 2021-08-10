@@ -1,0 +1,50 @@
+@use '../../abstracts' as *;
+
+.card_form {
+  max-width: 400px;
+  width: 100%;
+  padding: 15px;
+  background-color: $blue;
+  @include borderRadius(10px);
+  @include cardShadow;
+
+  h1 {
+    text-align: center;
+    font-weight: 600;
+    color: $white;
+    padding: 5px 0;
+  }
+
+  .form {
+    padding: 25px 0 0 0;
+
+    a {
+      float: right;
+      display: block;
+      color: $white;
+      font-weight: 600;
+      padding: 2px;
+
+      &:hover {
+        color: $gray;
+      }
+    }
+
+    label {
+      color: $white;
+      font-family: $font-title;
+      font-weight: 500;
+    }
+
+    input {
+      color: $dark;
+      font-family: $font-title;
+      font-weight: 500;
+    }
+
+    button {
+      font-weight: 600;
+      padding: 0 15px;
+    }
+  }
+}
