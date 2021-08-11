@@ -18,4 +18,5 @@ class StoreProvider {
     }
 }
 
-export default new StoreProvider();
+const _storeProvider = new StoreProvider();
+export default _storeProvider;
