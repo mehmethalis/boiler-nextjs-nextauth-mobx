@@ -1,9 +1,10 @@
 import {getSession, signOut} from "next-auth/client";
 import {GetServerSideProps} from "next";
 import {useState} from "react";
+import StoreProvider from "../../utils/store.provider";
 
 const Profile = ({session}: any) => {
-    console.log(session,"session")
+    console.log(session, "session")
     const [loading, setLoading] = useState(false);
 
     const logout = async () => {

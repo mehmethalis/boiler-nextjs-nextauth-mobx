@@ -1,9 +1,9 @@
 import {Form, Input, Button, Checkbox} from "antd";
 import Link from 'next/link';
-import {signIn, useSession} from "next-auth/client";
 import styles from '../../styles/components/auth/form-login.module.scss';
 import {useState} from "react";
 import {useRouter} from "next/router";
+import StoreProvider from "../../utils/store.provider";
 
 const FormLogin = () => {
     const [loading, setLoading] = useState(false);
@@ -11,16 +11,12 @@ const FormLogin = () => {
 
     const onFinish = async (values: { email: string, password: string }) => {
         setLoading(true)
-        const result: any = await signIn('credentials', {
-            redirect: false,
-            email: values.email,
-            password: values.password
-        })
+        const AuthStore = StoreProvider.getStore('AuthStore')
+        const isConfirmed = await AuthStore.login(values)
         setLoading(false)
-        if (!result.error) {
+        if (isConfirmed) {
             await router.replace('/profile');
         }
-
     };
 
     return (

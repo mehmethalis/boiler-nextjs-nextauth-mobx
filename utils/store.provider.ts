@@ -1,7 +1,7 @@
 class StoreProvider {
-    stores: { [name: string]: Object } = {};
+    stores: any = {};
 
-    addStore(name: string, store: Object) {
+    addStore(name: string, store: any) {
         if (this.stores[name]) {
             throw new Error('same_name_store');
         }

@@ -1,8 +1,10 @@
 import StoreProvider from '../utils/store.provider';
 import UserStore from './user.store';
+import AuthStore from './auth.store';
 
-export const stores: { [name: string]: Object } = {
-    UserStore
+export const stores: any = {
+    UserStore,
+    AuthStore
 }
 
 Object.keys(stores).forEach((store) => {
