@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from "next/link";
+import {Button} from "antd";
 
 const Home = () => {
 
@@ -14,6 +15,8 @@ const Home = () => {
             <Link href={'/auth/signin'}> login </Link>
             <br/>
             <Link href={'/auth/signup'}>register</Link>
+           <br/>
+           <Button type={'primary'}>Hello</Button>
 
         </div>
     )
