@@ -1,10 +1,13 @@
 import {getSession, signOut} from "next-auth/client";
 import {GetServerSideProps} from "next";
 import {useState} from "react";
-import StoreProvider from "../../utils/store.provider";
+import {observer} from "mobx-react-lite";
+import {useStore} from '../../store'
 
 const Profile = ({session}: any) => {
+    const {UserStore}: any = useStore()
     console.log(session, "session")
+    console.log(UserStore.user, '----------')
     const [loading, setLoading] = useState(false);
 
     const logout = async () => {
@@ -21,7 +24,7 @@ const Profile = ({session}: any) => {
         </div>
     )
 }
-export default Profile;
+export default observer(Profile);
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const session = await getSession(context);

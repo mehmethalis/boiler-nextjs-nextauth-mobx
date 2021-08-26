@@ -4,6 +4,7 @@ import styles from '../../styles/components/auth/form-login.module.scss';
 import {useState} from "react";
 import {useRouter} from "next/router";
 import StoreProvider from "../../utils/store.provider";
+import {observer} from "mobx-react-lite";
 
 const FormLogin = () => {
     const [loading, setLoading] = useState(false);
@@ -66,4 +67,4 @@ const FormLogin = () => {
         </div>
     )
 }
-export default FormLogin;
+export default observer(FormLogin);

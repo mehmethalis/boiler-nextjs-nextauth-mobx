@@ -10,11 +10,10 @@ class UserStore {
 
     async verifySession(token: string) {
         const [err, response] = await UserService.verifySession(token).toArray()
-        console.log(err)
-        console.log(response)
+
         if (!err && response) {
             await runInAction(async () => {
-                this.user = response.user
+                this.user = response
             })
             return true
         }
